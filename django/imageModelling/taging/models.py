@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+from django.db import models
+from django.db.models import ImageField, signals
+from django.dispatch import dispatcher
+
+#inici model
+
+class Tag(models.Model):
+  name = models.CharField(max_length=200)
+  description = models.CharField(max_length=200)
+
+class Picture(models.Model):
+    caption = models.CharField(blank=True, max_length=100)
+    image = models.ImageField(upload_to='photos/%Y/%m/%d')
+
+#fi model
+
+
